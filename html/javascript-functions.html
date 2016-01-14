@@ -11,8 +11,26 @@
   <body>
     <div class="container">
       <div class="jumbotron jumbocolor">
-        <h1 class="title">Markdown</h1>
-        <p class="verbage">According to Lifehacker, "...Markdown is a... way to add formatting like headers, bold, bulleted lists, and so on to plain text. It was originally designed to be an easy alternative to HTML, and allows people to create web pages with no HTML experience—but it's also a great way to organize notes, to-do lists, and other things. It has all the advantages of plain text, but with the organizational power of a word processor. The end goal is a minimalist writing system that you can use to get your thoughts down, and then export them elsewhere without worrying too much about the appearance."</p>
+        <h1 class="title"></h1>
+        <p class="verbage">A function runs a block of code. It can take arguments, or variables, and manipulate them and return them</p>
+        <p>
+          To declare a function in JavaScript:
+        </p>
+        <div class="code">
+          function functionName(argument1, argument2) {
+            var multiply = argument1 * argument2;
+            return multiply;
+          }
+        </div>
+        <p>
+          The example above multiplies argument1 and argument2 and stores it to a new variable multiply. This multiply variable is only accessible in this function, but the function returns the value held in multiply for use from wherever you call the function. Call a function like so:
+        </p>
+        <div class="code">
+          var answer = functionName(5,5);
+        </div>
+        <p>
+          The answer variable would contain 25. 
+        </p>
       </div>
 
     </div>
