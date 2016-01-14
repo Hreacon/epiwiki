@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script type="text/javascript" src="../js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
+    <title>EpiWiki</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron jumbocolor">
+        <h1 class="title"></h1>
+        <p class="verbage">Allows an element to move left and right, adjascent to other elements.</p>
+        <p>
+          Something to keep in mind while floating elements is it collapses parent elements. For instance, we have a paragraph surrounded with a div:
+        </p>
+        <div class="code">
+          <div>
+            <p>
+              This is the example.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div style="border:1px solid black;">
+            <p>
+              This is the example.
+            </p>
+          </div>
+        </div>
+        <p>
+          You can see with the border that the div spans the whole page and the paragraph is nicely inside of it. Lets float the paragraph.
+        </p>
+        <div>
+          <div style="border:1px solid black;">
+            <p style="float:left;">
+              This is the example.
+            </p>
+          </div>
+        </div>
+        <p>
+          See the black line? Thats the same div. The paragraph has floated to the left and no longer is strictly inside of the div and the div has collapsed. This can cause some funky styling issues!
+        </p>
+      </div>
+
+    </div>
+  </body>
+</html>

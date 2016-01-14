@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script type="text/javascript" src="../js/jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
+    <title>EpiWiki</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron jumbocolor">
+        <h1 class="title"></h1>
+        <p class="verbage">HTML Forms are used to take input from the user and do many things with it, like creating user accounts or authenticating returning users. Shipping products to customers and collecting payments.</p>
+        <p>
+          An example of a form:
+        </p>
+        <div class="code">
+          <form>
+            <label for="username">Username:</label>
+            <input type="text" name="username">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+
+            <input type="submit" name="submit" value="Log In">
+          </form>
+        </div>
+        <p>
+          Produces:
+        </p>
+        <div class="form">
+          <form>
+            <label for="username">Username:</label><input type="text" name="username">
+            <label for="password">Password:</label><input type="password" name="password">
+            <input type="submit" name="submit" value="Log In">
+          </form>
+        </div>
+        <p>
+          The form tag groups the form elements together and gives them one response.
+        </p>
+        <p>
+          The label tag gives the text label to an input the ability to click on the text and get the input box.
+        </p>
+        <p>
+          The input tag itself is used to denote the type of input you are requesting from the user. There are many types of input you can collect:
+        </p>
+        <div class="code">
+          <input type="button" name="button" value="Buttons"><br>
+          <input type="checkbox" name="checkbox" value="Checkbox">Checkbox<br>
+          <input type="radio" name="radio" value="">Radio Button<br>
+        </div>
+        <div>
+          <input type="button" name="button" value="Buttons"><br>
+          <input type="checkbox" name="checkbox" value="Checkbox">Checkbox<br>
+          <input type="radio" name="radio" value="">Radio Button<br>
+        </div>
+        <p>
+          And many more. 
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
