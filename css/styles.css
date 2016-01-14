@@ -1,12 +1,12 @@
 .jumbocolor, .term {
   background: #A4DCD1;
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px;
 }
 
 .term {
   display: inline-block;
-  text-align: center;
-  font-family: monospace;
-  font-size: 20px;
   width:300px;
   margin:10px;
   padding:15px;

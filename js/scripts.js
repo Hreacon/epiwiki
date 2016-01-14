@@ -36,7 +36,7 @@ $(document).ready(function() {
   var href = window.location.href;
   var page = href.substr(href.lastIndexOf('/') +1);
   page = page.substr(0, page.indexOf('.'));
-  var currentPageIndex = 0;
+  var currentPageIndex = -100;
 
   for(var index=0;index<terms.length;index+=1) {
     if(makeNameALink(terms[index][0]) === page)
@@ -44,26 +44,41 @@ $(document).ready(function() {
   }
 
   var homeLink = '../index';
-  var nextLink;
-  var prevLink;
+  var prevLink, nextLink;
+  if(  terms.length-1 > currentPageIndex && currentPageIndex >= 0 ) {
+    nextLink = makeNameALink(terms[currentPageIndex+1][0]);
+  } else if( currentPageIndex === terms.length -1 )
+    nextLink = makeNameALink(terms[0][0]);
+  if( currentPageIndex > 0 ) {
+    prevLink = makeNameALink(terms[currentPageIndex-1][0]);
+  } else if( currentPageIndex === 0 )
+    prevLink = makeNameALink(terms[terms.length-1][0]);
 
   if( page === 'index') {
     terms.forEach(function(term) {
       $(".terms").append('<a class="term" href="html/' + makeNameALink(term[0]) + '.html"><div ><p>' + term[0] +  '</p></div></a>');
     });
     homeLink = 'index';
-  } else if (page === "branching") {
-    $('.branchButton').click(function() {
-      $('.branch1').toggle();
-      $('.branch2').toggle();
-    });
+  } else {
+    if($(".title").text().length < 2) {
+      $(".title").text(terms[currentPageIndex][0]);
+    }
+    if (page === "branching") {
+      $('.branchButton').click(function() {
+        $('.branch1').toggle();
+        $('.branch2').toggle();
+      });
+    }
   }
 
-  if($(".title").text().length < 2) {
-    $(".title").text(terms[currentPageIndex][0]);
-  }
 
-  var header = '<header class="page-header"><ol class="nav nav-pills pull-right"><li><a class="btn" href="' + homeLink + '.html"><span class="glyphicon glyphicon-home"></span></a></li><li><a class="btn" href="' + prevLink + '.html"><span class="glyphicon glyphicon-arrow-left"></span></a></li><li><a class="btn" href="' + nextLink + '.html"><span class="glyphicon glyphicon-arrow-right" ></span></a></li></ol><h3 class="name">Epiwiki</h3></header>';
+
+  var header = '<header class="page-header"><ol class="nav nav-pills pull-right"><li><a class="btn" href="' + homeLink + '.html"><span class="glyphicon glyphicon-home"></span></a></li>';
+  if(prevLink)
+    header = header + '<li><a class="btn" href="' + prevLink + '.html"><span class="glyphicon glyphicon-arrow-left"></span></a></li>';
+  if(nextLink)
+    header = header + '<li><a class="btn" href="' + nextLink + '.html"><span class="glyphicon glyphicon-arrow-right" ></span></a></li>';
+  header = header + '</ol><h3 class="name">Epiwiki</h3></header>';
   $('.container').prepend(header);
 
   $('form').submit(function(event){event.preventDefault();});
