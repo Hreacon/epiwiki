@@ -1,0 +1,44 @@
+.jumbocolor {
+  background: #A4DCD1;
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+.verbage {
+  padding-top: 15px;
+}
+
+.title {
+  padding-bottom: .3em;
+}
+
+.name {
+  color: #A4DCD1;
+}
+
+body {
+  background:url('../pattern.png');
+}
+@font-face {
+  font-family:"DOS";
+  src: url(../fonts/dos.ttf) format('truetype');
+}
+.code {
+  padding-bottom:10px;
+  font-family:DOS;
+  font-size: 1em;
+  white-space: pre-wrap;
+  text-align: left;
+  background: black;
+  color:green;
+  border-radius: 10px;
+}
+
+.boxpic {
+  padding-top: 1em
+}
+ul {
+  text-align: left;
+  margin-left:10%;
+}
