@@ -42,4 +42,18 @@ $(document).ready(function() {
     if(makeNameALink(terms[index][0]) === page)
       currentPageIndex = index;
   }
+
+  var homeLink = 'index';
+  var nextLink;
+  var prevLink;
+
+  if( page === 'index') {
+    terms.forEach(function(term) {
+      $(".terms").append('<a href="html/' + makeNameALink(term[0]) + '.html"><div class="jumbotron jumbocolor"><p>' + term[0] + ' - ' + term[1] + '</p></div></a>');
+    });
+    this.homeLink = '../index.html';
+  }
+
+  var header = '<header class="page-header"><ol class="nav nav-pills pull-right"><li><a class="btn btn-warning active" href="' + homeLink + '.html"><span class="glyphicon glyphicon-home"></span></a></li><li><a class="btn btn-warning" href="' + prevLink + '.html"><span class="glyphicon glyphicon-arrow-left"></span></a></li><li><a class="btn btn-warning" href="' + nextLink + '.html"><span class="glyphicon glyphicon-arrow-right" ></span></a></li></ol><h3 class="name">Epiwiki</h3></header>';
+  $('.container').prepend(header);
 });
