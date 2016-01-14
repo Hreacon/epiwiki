@@ -1,3 +1,9 @@
+
+function makeNameALink(name) {
+  var link = name.toLowerCase();
+  link = link.replace(/ /g, '-');
+  return link;
+}
 $(document).ready(function() {
   $('.code').each(function(index, obj) {
     $(this).text($(this).html());
@@ -25,5 +31,15 @@ $(document).ready(function() {
     ['Bootstrap', ''],
     ['Divs and Spans', '']
   ];
+  terms.sort();
 
+  var href = window.location.href;
+  var page = href.substr(href.lastIndexOf('/') +1);
+  page = page.substr(0, page.indexOf('.'));
+  var currentPageIndex = 0;
+
+  for(var index=0;index<terms.length;index+=1) {
+    if(makeNameALink(terms[index][0]) === page)
+      currentPageIndex = index;
+  }
 });
