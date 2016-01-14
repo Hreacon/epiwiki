@@ -60,4 +60,7 @@ $(document).ready(function() {
 
   var header = '<header class="page-header"><ol class="nav nav-pills pull-right"><li><a class="btn btn-warning active" href="' + homeLink + '.html"><span class="glyphicon glyphicon-home"></span></a></li><li><a class="btn btn-warning" href="' + prevLink + '.html"><span class="glyphicon glyphicon-arrow-left"></span></a></li><li><a class="btn btn-warning" href="' + nextLink + '.html"><span class="glyphicon glyphicon-arrow-right" ></span></a></li></ol><h3 class="name">Epiwiki</h3></header>';
   $('.container').prepend(header);
+
+  $('form').submit(function(event){event.preventDefault();});
+
 });
