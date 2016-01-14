@@ -16,20 +16,20 @@ $(document).ready(function() {
     ['Attributes', 'Attributes provide additional information about HTML elements.'],
     ['Floats', 'A CSS property'],
     ['Box Model', 'A box that wraps around HTML element.'],
-    ['Grid System', ''],
-    ['Responsive Design',''],
-    ['JavaScript Arithmatic', ''],
-    ['JavaScript Functions', ''],
-    ['JavaScript Variables', ''],
-    ['JavaScript Strings', ''],
-    ['JavaScript Methods', ''],
+    ['Grid System', 'a system that is structured to allow for content to be stacked both vertically and horizontally.'],
+    ['Responsive Design','Used to create synergy between various sized viewing screens.'],
+    ['JavaScript Arithmetic', 'maths in practice'],
+    ['JavaScript Functions', 'A fancy word for "Run this block of code"'],
+    ['JavaScript Variables', 'A place to store information'],
+    ['JavaScript Strings', 'An array disguised as a line of text'],
+    ['JavaScript Methods', 'A function, but in an object'],
     ['jQuery', 'A powerful library used to easily select and manipulate the DOM'],
     ['DOM Manipulation', 'Manipulate the web page with JavaScript'],
     ['Forms', 'Collect input from the user'],
-    ['Branching', ''],
-    ['Looping', ''],
-    ['Bootstrap', ''],
-    ['Divs and Spans', '']
+    ['Branching', 'This is a functionality that allows specific content to be displayed when a user selects certain criteria'],
+    ['Looping', 'Executing code more than once'],
+    ['Bootstrap', 'Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.'],
+    ['Divs and Spans', 'Elements used to demarkate and delineate']
   ];
   terms.sort();
 
@@ -43,22 +43,27 @@ $(document).ready(function() {
       currentPageIndex = index;
   }
 
-  var homeLink = 'index';
+  var homeLink = '../index';
   var nextLink;
   var prevLink;
 
   if( page === 'index') {
     terms.forEach(function(term) {
-      $(".terms").append('<a href="html/' + makeNameALink(term[0]) + '.html"><div class="jumbotron jumbocolor"><p>' + term[0] + ' - ' + term[1] + '</p></div></a>');
+      $(".terms").append('<a class="term" href="html/' + makeNameALink(term[0]) + '.html"><div ><p>' + term[0] +  '</p></div></a>');
     });
-    this.homeLink = '../index.html';
+    homeLink = 'index';
+  } else if (page === "branching") {
+    $('.branchButton').click(function() {
+      $('.branch1').toggle();
+      $('.branch2').toggle();
+    });
   }
 
   if($(".title").text().length < 2) {
     $(".title").text(terms[currentPageIndex][0]);
   }
 
-  var header = '<header class="page-header"><ol class="nav nav-pills pull-right"><li><a class="btn btn-warning active" href="' + homeLink + '.html"><span class="glyphicon glyphicon-home"></span></a></li><li><a class="btn btn-warning" href="' + prevLink + '.html"><span class="glyphicon glyphicon-arrow-left"></span></a></li><li><a class="btn btn-warning" href="' + nextLink + '.html"><span class="glyphicon glyphicon-arrow-right" ></span></a></li></ol><h3 class="name">Epiwiki</h3></header>';
+  var header = '<header class="page-header"><ol class="nav nav-pills pull-right"><li><a class="btn" href="' + homeLink + '.html"><span class="glyphicon glyphicon-home"></span></a></li><li><a class="btn" href="' + prevLink + '.html"><span class="glyphicon glyphicon-arrow-left"></span></a></li><li><a class="btn" href="' + nextLink + '.html"><span class="glyphicon glyphicon-arrow-right" ></span></a></li></ol><h3 class="name">Epiwiki</h3></header>';
   $('.container').prepend(header);
 
   $('form').submit(function(event){event.preventDefault();});
